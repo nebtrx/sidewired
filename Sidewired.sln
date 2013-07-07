@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{57406752-90D8-4D90-9C10-2535FA404C19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net40", "net40", "{E49AA52C-64A7-4D4A-B6AE-F3CCEA61ED38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sl5", "sl5", "{4D2BB142-BA32-4791-882F-C3EA23D49D03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{E0DBBE7B-FB3E-4505-A384-4B27476726D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sidewired.Core", "Sidewired.Core\net40\Sidewired.Core.csproj", "{08596F68-77CF-479F-BED8-41C1E4B6DFAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sidewired.Core", "Sidewired.Core\sl5\Sidewired.Core.csproj", "{5A7D5CFE-0739-4EB1-A455-67AFF2390666}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sidewired.SampleMVC", "Samples\Sidewired.SampleMVC\Sidewired.SampleMVC.csproj", "{3196FEB3-DB52-4BFE-8C60-96BA3C35703B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCustomPlayer", "Samples\TestCustomPlayer\TestCustomPlayer.csproj", "{90024AC1-B195-404F-9936-143A1BFD3CAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sidewired", "Sidewired\Sidewired.csproj", "{EB57D8DE-C911-4617-BB12-DA5F830767CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sidewired.Plugin", "Sidewired.Plugin\Sidewired.Plugin.csproj", "{0515E2BE-9734-47BF-BC2D-53DD09FF7BE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sidewired.Web", "Sidewired.Web\Sidewired.Web.csproj", "{987219D3-CDA4-45D3-81D3-3CB3ECCDFDDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C3184E68-B924-40A7-BCB6-33F09EF4CA55}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget-specs", "nuget-specs", "{86B477B4-A1CF-4393-90D3-D4B148097265}"
+	ProjectSection(SolutionItems) = preProject
+		nuget-specs\Sidewired.nuspec = nuget-specs\Sidewired.nuspec
+		nuget-specs\Sidewired.Web.nuspec = nuget-specs\Sidewired.Web.nuspec
+		nuget-specs\SidewiredCore.nuspec = nuget-specs\SidewiredCore.nuspec
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08596F68-77CF-479F-BED8-41C1E4B6DFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08596F68-77CF-479F-BED8-41C1E4B6DFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08596F68-77CF-479F-BED8-41C1E4B6DFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08596F68-77CF-479F-BED8-41C1E4B6DFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A7D5CFE-0739-4EB1-A455-67AFF2390666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A7D5CFE-0739-4EB1-A455-67AFF2390666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A7D5CFE-0739-4EB1-A455-67AFF2390666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A7D5CFE-0739-4EB1-A455-67AFF2390666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3196FEB3-DB52-4BFE-8C60-96BA3C35703B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3196FEB3-DB52-4BFE-8C60-96BA3C35703B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3196FEB3-DB52-4BFE-8C60-96BA3C35703B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3196FEB3-DB52-4BFE-8C60-96BA3C35703B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90024AC1-B195-404F-9936-143A1BFD3CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90024AC1-B195-404F-9936-143A1BFD3CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90024AC1-B195-404F-9936-143A1BFD3CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90024AC1-B195-404F-9936-143A1BFD3CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB57D8DE-C911-4617-BB12-DA5F830767CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB57D8DE-C911-4617-BB12-DA5F830767CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB57D8DE-C911-4617-BB12-DA5F830767CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB57D8DE-C911-4617-BB12-DA5F830767CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0515E2BE-9734-47BF-BC2D-53DD09FF7BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0515E2BE-9734-47BF-BC2D-53DD09FF7BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0515E2BE-9734-47BF-BC2D-53DD09FF7BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0515E2BE-9734-47BF-BC2D-53DD09FF7BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{987219D3-CDA4-45D3-81D3-3CB3ECCDFDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{987219D3-CDA4-45D3-81D3-3CB3ECCDFDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{987219D3-CDA4-45D3-81D3-3CB3ECCDFDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{987219D3-CDA4-45D3-81D3-3CB3ECCDFDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E49AA52C-64A7-4D4A-B6AE-F3CCEA61ED38} = {57406752-90D8-4D90-9C10-2535FA404C19}
+		{4D2BB142-BA32-4791-882F-C3EA23D49D03} = {57406752-90D8-4D90-9C10-2535FA404C19}
+		{08596F68-77CF-479F-BED8-41C1E4B6DFAE} = {E49AA52C-64A7-4D4A-B6AE-F3CCEA61ED38}
+		{5A7D5CFE-0739-4EB1-A455-67AFF2390666} = {4D2BB142-BA32-4791-882F-C3EA23D49D03}
+		{3196FEB3-DB52-4BFE-8C60-96BA3C35703B} = {E0DBBE7B-FB3E-4505-A384-4B27476726D2}
+		{90024AC1-B195-404F-9936-143A1BFD3CAA} = {E0DBBE7B-FB3E-4505-A384-4B27476726D2}
+	EndGlobalSection
+EndGlobal
