@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08596F68-77CF-479F-BED8-41C1E4B6DFAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sidewired.Core</RootNamespace>
+    <AssemblyName>Sidewired.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Sidewired.Core.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Sidewired.Core.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Advertisement.cs" />
+    <Compile Include="Domain\Chapter.cs" />
+    <Compile Include="Domain\PlaylistItem.cs" />
+    <Compile Include="Domain\Stretch.cs" />
+    <Compile Include="Fluent\IChapterFluent.cs" />
+    <Compile Include="Interfaces\IChapter.cs" />
+    <Compile Include="Interfaces\IMarker.cs" />
+    <Compile Include="Sidewired.cs" />
+    <Compile Include="Domain\TimelineMediaMarker.cs" />
+    <Compile Include="Interfaces\IAdvertisement.cs" />
+    <Compile Include="Interfaces\IPlaylistItem.cs" />
+    <Compile Include="Interfaces\ITimelineMediaMarker.cs" />
+    <Compile Include="Utilities\StaticFactory.cs" />
+    <Compile Include="Domain\S3DContents.cs" />
+    <Compile Include="Domain\S3DEyePriorities.cs" />
+    <Compile Include="Domain\S3DFormats.cs" />
+    <Compile Include="Domain\S3DProperties.cs" />
+    <Compile Include="Domain\S3DSubsamplingModes.cs" />
+    <Compile Include="Domain\S3DSubsamplingOrders.cs" />
+    <Compile Include="Utilities\Extensions.cs" />
+    <Compile Include="Fluent\IAdvertisementFluent.cs" />
+    <Compile Include="Fluent\IMarkerResourceFluent.cs" />
+    <Compile Include="Fluent\IPlayerSettingsFluent.cs" />
+    <Compile Include="Fluent\IPlaylistItemFluent.cs" />
+    <Compile Include="Fluent\IS3DPropertiesFluent.cs" />
+    <Compile Include="Fluent\ITimelineMediaMarkerFluent.cs" />
+    <Compile Include="Interfaces\IS3DProperties.cs" />
+    <Compile Include="Interfaces\IMarkerResource.cs" />
+    <Compile Include="Interfaces\IPlayerSettings.cs" />
+    <Compile Include="Domain\ColorString.cs" />
+    <Compile Include="Domain\DeliveryMethods.cs" />
+    <Compile Include="Domain\FeatureVisibility.cs" />
+    <Compile Include="Domain\FontStretch.cs" />
+    <Compile Include="Domain\FontStyle.cs" />
+    <Compile Include="Domain\FontWeight.cs" />
+    <Compile Include="Domain\MarkerResource.cs" />
+    <Compile Include="Domain\PlayerSettings.cs" />
+    <Compile Include="Domain\Thickness.cs" />
+    <Compile Include="Domain\VerticalAlignment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\ColorStringConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

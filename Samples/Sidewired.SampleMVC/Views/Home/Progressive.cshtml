@@ -1,0 +1,26 @@
+﻿@using Sidewired.Web
+@{
+    ViewBag.Title = "Pregresive Sample";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+
+<div style="float: left;">
+    <form>
+        <h3>Microsoft Shipped Player</h3>
+        @Html.SilverlightMediaPlayer(@Url.Content("~/ClientBin/ProgressiveDownloadPlayer.xap"), new { style = "height:350px; width:450px;" })
+    </form>
+</div>
+
+<div style="margin-left: 500px;">
+    <form>
+        <h3>Custom Player</h3>
+        @Html.SilverlightMediaPlayer(@Url.Content("~/ClientBin/TestCustomPlayer.xap"), new { style = "height:350px; width:450px;" }, @Url.Content("~/ClientBin/Simple.xaml"))
+    </form>
+</div>
+
+
+
+
+

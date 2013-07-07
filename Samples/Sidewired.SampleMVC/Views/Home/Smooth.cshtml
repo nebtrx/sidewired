@@ -1,0 +1,42 @@
+﻿@using Sidewired.Web
+@{
+    ViewBag.Title = "Smooth Sample";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+
+<div style="float: left;">
+    <form>
+        <h3>Microsoft Shipped Player</h3>
+        @Html.SilverlightMediaPlayer(@Url.Content("~/ClientBin/SmoothStreamingPlayer.xap"), new { id= "player1",style = "height:350px; width:450px;" }, null, "Player1", "onError1")
+    </form>
+</div>
+
+<div style="margin-left: 500px;">
+    <form>
+        <h3>Custom Player</h3>
+        @Html.SilverlightMediaPlayer(@Url.Content("~/ClientBin/TestCustomPlayer.xap"), new { id= "player2", style = "height:350px; width:450px;" }, @Url.Content("~/ClientBin/Simple.xaml"),"Player2", "onError2", "onLoaded2")
+    </form>
+</div>
+
+<script type="text/javascript">
+
+    function onError1(sender, args) {
+        alert('Error on left player');
+    }
+    
+    function onError2(sender, args) {
+        alert('Error on right player');
+    }
+    
+    function onLoaded2(sender, args) {
+        var player2 = sender.getHost().Content.Player2;
+        alert("JavaScript Api Test: Current player volume level:" + player2.RenderedFramesPerSecond );
+    }
+</script>
+
+
+
+
+
