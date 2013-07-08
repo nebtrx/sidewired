@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>Omar Ahmed García Pérez</authors>
+    <owners>Omar Ahmed García Pérez</owners>
+    <projectUrl>https://bitbucket.org/nebtrx/sidewired</projectUrl>
+    <id>Sidewired.Core</id>
+    <title>Sidewired.Core</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Sidewired's Core Components.
+    </description>
+    <language>en-US</language>
+    <tags>Sidewired ASP.NET MVC Core Silverlight Media Platform Player</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="4.5.11" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Xml.Serialization" targetFramework="sl5" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="..\..\Sidewired.Core\sl5\Bin\$configuration$\Sidewired.Core.dll" target="lib\sl5\" />
+    <file src="..\..\Sidewired.Core\sl5\Bin\$configuration$\Sidewired.Core.xml" target="lib\sl5\" />
+    <file src="..\..\Sidewired.Core\net40\Bin\$configuration$\Sidewired.Core.dll" target="lib\net40\" />
+    <file src="..\..\Sidewired.Core\net40\Bin\$configuration$\Sidewired.Core.xml" target="lib\net40\" />
+  </files>
+</package>

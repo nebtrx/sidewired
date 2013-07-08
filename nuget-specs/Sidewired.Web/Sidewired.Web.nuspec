@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>Omar Ahmed García Pérez</authors>
+    <owners>Omar Ahmed García Pérez</owners>
+    <projectUrl>https://bitbucket.org/nebtrx/sidewired</projectUrl>
+    <id>Sidewired.Web</id>
+    <title>Sidewired.Web</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Components for using Sidewired in ASP.NET MVC Web Applications.
+    </description>
+    <language>en-US</language>
+    <tags>Sidewired ASP.NET MVC Web Silverlight Media Platform Player</tags>
+    <dependencies>
+      <dependency id="Sidewired.Core" version="1.0.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Web.Mvc" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Web.WebPages" targetFramework="net40"/>
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="..\..\Sidewired.Web\bin\$configuration$\Sidewired.Web.dll" target="lib\net40\" />
+    <file src="..\..\Sidewired.Web\bin\$configuration$\Sidewired.Web.xml" target="lib\net40\" />
+    <file src="..\..\Sidewired\Bin\$configuration$\Sidewired.xap" target="content\ClientBin\" />
+  </files>
+</package>
