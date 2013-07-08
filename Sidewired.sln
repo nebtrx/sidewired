@@ -29,10 +29,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C3184E
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget-specs", "nuget-specs", "{86B477B4-A1CF-4393-90D3-D4B148097265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sidewired", "Sidewired", "{80F45562-10E9-4C88-B4A8-0914E5C4AB0B}"
 	ProjectSection(SolutionItems) = preProject
-		nuget-specs\Sidewired.nuspec = nuget-specs\Sidewired.nuspec
-		nuget-specs\Sidewired.Web.nuspec = nuget-specs\Sidewired.Web.nuspec
-		nuget-specs\SidewiredCore.nuspec = nuget-specs\SidewiredCore.nuspec
+		nuget-specs\Sidewired\Sidewired.nuspec = nuget-specs\Sidewired\Sidewired.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sidewired.Web", "Sidewired.Web", "{7CC31F12-69D2-4BAF-AB10-B89D723F29D0}"
+	ProjectSection(SolutionItems) = preProject
+		nuget-specs\Sidewired.Web\Sidewired.Web.nuspec = nuget-specs\Sidewired.Web\Sidewired.Web.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sidewired.Core", "Sidewired.Core", "{595B77E6-F257-4935-8246-B8D868F124EF}"
+	ProjectSection(SolutionItems) = preProject
+		nuget-specs\Sidewired.Core\Sidewired.Core.nuspec = nuget-specs\Sidewired.Core\Sidewired.Core.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{D84AFF50-A235-4FA4-B67D-9D59BBD45ABC}"
+	ProjectSection(SolutionItems) = preProject
+		nuget-specs\Sidewired\content\README.txt = nuget-specs\Sidewired\content\README.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{AB8CD552-7908-44A4-B9F4-714588D5C413}"
+	ProjectSection(SolutionItems) = preProject
+		nuget-specs\Sidewired\tools\install.ps1 = nuget-specs\Sidewired\tools\install.ps1
 	EndProjectSection
 EndProject
 Global
@@ -80,5 +100,10 @@ Global
 		{5A7D5CFE-0739-4EB1-A455-67AFF2390666} = {4D2BB142-BA32-4791-882F-C3EA23D49D03}
 		{3196FEB3-DB52-4BFE-8C60-96BA3C35703B} = {E0DBBE7B-FB3E-4505-A384-4B27476726D2}
 		{90024AC1-B195-404F-9936-143A1BFD3CAA} = {E0DBBE7B-FB3E-4505-A384-4B27476726D2}
+		{80F45562-10E9-4C88-B4A8-0914E5C4AB0B} = {86B477B4-A1CF-4393-90D3-D4B148097265}
+		{7CC31F12-69D2-4BAF-AB10-B89D723F29D0} = {86B477B4-A1CF-4393-90D3-D4B148097265}
+		{595B77E6-F257-4935-8246-B8D868F124EF} = {86B477B4-A1CF-4393-90D3-D4B148097265}
+		{D84AFF50-A235-4FA4-B67D-9D59BBD45ABC} = {80F45562-10E9-4C88-B4A8-0914E5C4AB0B}
+		{AB8CD552-7908-44A4-B9F4-714588D5C413} = {80F45562-10E9-4C88-B4A8-0914E5C4AB0B}
 	EndGlobalSection
 EndGlobal

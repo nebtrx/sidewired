@@ -73,6 +73,10 @@
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sidewired.Core\sl5\Sidewired.Core.csproj">
+      <Project>{5a7d5cfe-0739-4eb1-a455-67aff2390666}</Project>
+      <Name>Sidewired.Core %28Core\sl5\Sidewired.Core%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sidewired.Plugin\Sidewired.Plugin.csproj">
       <Project>{0515e2be-9734-47bf-bc2d-53dd09ff7be6}</Project>
       <Name>Sidewired.Plugin</Name>
@@ -93,4 +97,10 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>nuget pack $(SolutionDir)\nuget-specs\Sidewired\Sidewired.nuspec -OutputDirectory "D:\DOCUMENTS\Visual Studio 2012\Packages Cache\Sidewired" -Prop Configuration=$(Configuration)
+nuget pack $(SolutionDir)\nuget-specs\Sidewired.Core\Sidewired.Core.nuspec -OutputDirectory "D:\DOCUMENTS\Visual Studio 2012\Packages Cache\Sidewired.Core" -Prop Configuration=$(Configuration)
+nuget pack $(SolutionDir)\nuget-specs\Sidewired.Web\Sidewired.Web.nuspec -OutputDirectory "D:\DOCUMENTS\Visual Studio 2012\Packages Cache\Sidewired.Web" -Prop Configuration=$(Configuration)
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
