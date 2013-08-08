@@ -3,16 +3,123 @@ Please see https://bitbucket.org/nebtrx/framerizr/overview for more information 
 Getting started with Framerizr.MVC
 ----------------------------------
 
-Using Framerizr.MVC is easy once installed. You just have to specify the container where you want to iframe an ASP.NET MVC Web Application empowered with Framerizr, e.g.:
+Once installed Sidewired can be used in two modes: Explicit & Implicit. 
 
-	<div data-iframe-src="http://example. domain.com/" ></div>
+The explicit mode forces you to create the player configuration object and passes it to Sidewired Html Helpers
 
-Or alternatively you may specified a custom Framerizr URI, e.g.:
-
-	<div data-iframe-src="http://example.domain.com/" data-framerizr-uri="http://other.route.com/OtherApp/Framerizr"></div>
-
-Note:
-
-It's strongly recomended to check the jQuery reference in Views/Framerizr/Index.cshtml. It’s default set to jQuery v1.6.2 but surely you’ll have another one installed, it’s just Murphy’s Law. 
+	// Controller Code Fragment
 	
-	<script src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")">  </script>
+	...
+	
+	IPlayerSettings playerSettings = Core.Sidewired.CreatePlayerSettingsWith(playerSettings => playerSettings
+                .WithAutoPlay()
+                .WithCaptionsVisibility(FeatureVisibility.Visible)
+
+                .WithPlaylistItem(item => item.WithTimelineMarker(marker => marker.WithBegin(new TimeSpan(0, 0, 11))
+                                                                                  .WithEnd(new TimeSpan(0, 0, 11))
+                                                                                  .WithContent("Is he singing?")
+                                                                                  .WithAllowSeek())
+                                              .WithChapters(chapter => chapter.WithBegin(new TimeSpan(0,1,0))
+                                                                              .WithEnd(new TimeSpan(0,1,45))
+                                                                              .WithTitle("WOW!!!")
+                                                                              .WithDescription("LOL"))
+                                              .WithTimelineMarker(marker => marker.WithBegin(new TimeSpan(0, 0, 19))
+                                                                                  .WithEnd(new TimeSpan(0, 0, 19))
+                                                                                  .WithContent("Almost finish")
+                                                                                  .WithAllowSeek())
+                                              .WithInterstitialAdvertisement(advertisement => advertisement.WithDeliveryMethod(DeliveryMethods.ProgressiveDownload)
+                                                                                                             .WithAdSource(new Uri(baseUrl + Url.Content("~/Content/media/ad.wmv")))
+                                                                                                             .WithDuration(new TimeSpan(0, 0, 20))
+                                                                                                             .WithStartTime(new TimeSpan(0, 0, 5)))
+                                              .WithMarkerResource(resource => resource.WithSource(new Uri(baseUrl + Url.Content("~/Content/media/captions1.xml")))
+                                                                                        .WithFormat("TTAF1-DFXP"))
+                                              .WithMediaSource(new Uri("http://localhost/Videos/playlist.ism/manifest"))
+                                              .WithDeliveryMethod(DeliveryMethods.AdaptiveStreaming)
+                                              .WithThumbSource(new Uri(baseUrl + Url.Content("~/Content/media/magnifier.png"))))
+
+                .WithPlaylistItem(item => item.WithTimelineMarker(marker => marker.WithBegin(new TimeSpan(0, 0, 14))
+                                                                                  .WithEnd(new TimeSpan(0, 0, 14))
+                                                                                  .WithContent("Watch the guy on the right")
+                                                                                  .WithAllowSeek())
+                                              .WithMarkerResource(resource => resource.WithSource(new Uri(baseUrl + Url.Content("~/Content/media/captions2.xml")))
+                                                                                        .WithFormat("TTAF1-DFXP"))
+                                              .WithMediaSource(new Uri(baseUrl + Url.Content("~/Content/media/video.wmv")))
+                                              .WithDeliveryMethod(DeliveryMethods.ProgressiveDownload)
+                                              .WithThumbSource(new Uri(baseUrl + Url.Content("~/Content/media/nuke.jpg")))
+                                              .WithStartPosition(new TimeSpan(0,0,10))));   
+												
+	...
+	
+	return View(playerSettings);	
+	
+	...
+
+
+	
+	// View Code
+
+	@model Sidewired.Core.Interfaces.IPlayerSettings 	
+	
+	...
+	
+	@Html.SilverlightMediaPlayer(@Url.Content("~/ClientBin/ProgressiveDownloadPlayer.xap"), Model, new { style = "height:350px; width:450px;" })
+	
+	...
+
+
+The implicit mode allows you to define a unique configuration for your player anywhere in your code without worrying about any other code using or messing with it since it is thread locally storaged and only lasts for the contextual thread's life time. 
+This mode comes quite handy when you want to get rid of passing the player configuration object to the view or, even worse, having to create it right there.
+
+
+	// Controller(or anywhere) Code Fragment
+	
+	...
+	
+	Core.Sidewired.WirePlayerSettings(playerSettings => playerSettings
+                .WithAutoPlay()
+                .WithCaptionsVisibility(FeatureVisibility.Visible)
+
+                .WithPlaylistItem(item => item.WithTimelineMarker(marker => marker.WithBegin(new TimeSpan(0, 0, 11))
+                                                                                  .WithEnd(new TimeSpan(0, 0, 11))
+                                                                                  .WithContent("Is he singing?")
+                                                                                  .WithAllowSeek())
+                                              .WithChapters(chapter => chapter.WithBegin(new TimeSpan(0,1,0))
+                                                                              .WithEnd(new TimeSpan(0,1,45))
+                                                                              .WithTitle("WOW!!!")
+                                                                              .WithDescription("LOL"))
+                                              .WithTimelineMarker(marker => marker.WithBegin(new TimeSpan(0, 0, 19))
+                                                                                  .WithEnd(new TimeSpan(0, 0, 19))
+                                                                                  .WithContent("Almost finish")
+                                                                                  .WithAllowSeek())
+                                              .WithInterstitialAdvertisement(advertisement => advertisement.WithDeliveryMethod(DeliveryMethods.ProgressiveDownload)
+                                                                                                             .WithAdSource(new Uri(baseUrl + Url.Content("~/Content/media/ad.wmv")))
+                                                                                                             .WithDuration(new TimeSpan(0, 0, 20))
+                                                                                                             .WithStartTime(new TimeSpan(0, 0, 5)))
+                                              .WithMarkerResource(resource => resource.WithSource(new Uri(baseUrl + Url.Content("~/Content/media/captions1.xml")))
+                                                                                        .WithFormat("TTAF1-DFXP"))
+                                              .WithMediaSource(new Uri("http://localhost/Videos/playlist.ism/manifest"))
+                                              .WithDeliveryMethod(DeliveryMethods.AdaptiveStreaming)
+                                              .WithThumbSource(new Uri(baseUrl + Url.Content("~/Content/media/magnifier.png"))))
+
+                .WithPlaylistItem(item => item.WithTimelineMarker(marker => marker.WithBegin(new TimeSpan(0, 0, 14))
+                                                                                  .WithEnd(new TimeSpan(0, 0, 14))
+                                                                                  .WithContent("Watch the guy on the right")
+                                                                                  .WithAllowSeek())
+                                              .WithMarkerResource(resource => resource.WithSource(new Uri(baseUrl + Url.Content("~/Content/media/captions2.xml")))
+                                                                                        .WithFormat("TTAF1-DFXP"))
+                                              .WithMediaSource(new Uri(baseUrl + Url.Content("~/Content/media/video.wmv")))
+                                              .WithDeliveryMethod(DeliveryMethods.ProgressiveDownload)
+                                              .WithThumbSource(new Uri(baseUrl + Url.Content("~/Content/media/nuke.jpg")))
+                                              .WithStartPosition(new TimeSpan(0,0,10))));     
+	
+	...
+
+	
+	// View Code
+	
+	...
+	
+	@Html.SilverlightMediaPlayer(@Url.Content("~/ClientBin/ProgressiveDownloadPlayer.xap"), new { style = "height:350px; width:450px;" })
+	
+	...
+	

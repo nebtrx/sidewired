@@ -113,17 +113,5 @@ namespace Sidewired.Core.Fluent
             playerSettings.PlaylistVisibility = visibility;
             return playerSettings;
         }
-
-        /// <summary>
-        /// Sets <see cref="IPlayerSettings.XamlThemeSource"/> property of caller <see cref="IPlayerSettings"/> instance to given <see cref="Uri"/> value.
-        /// </summary>
-        /// <param name="playerSettings">Caller <see cref="IPlayerSettings"/> instance.</param>
-        /// <param name="xamlThemeSource">Given <see cref="Uri"/> value.</param>
-        /// <returns>The caller <see cref="IPlayerSettings"/> instance with <see cref="IPlayerSettings.XamlThemeSource"/> property setted to given <see cref="Uri"/> value.</returns>
-        public static IPlayerSettings WithSource(this IPlayerSettings playerSettings, Uri xamlThemeSource)
-        {
-            playerSettings.XamlThemeSource = xamlThemeSource;
-            return playerSettings;
-        }
     }
 }

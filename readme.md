@@ -90,7 +90,8 @@ Once installed Sidewired can be used in two modes: **Explicit** & **Implicit**.
 
 The explicit mode forces you to create the **player configuration object** and passes it to **Sidewired** Html Helpers
 
-```c#
+```
+
 	// Controller Code Fragment
 	
 	...
@@ -143,7 +144,7 @@ The explicit mode forces you to create the **player configuration object** and p
 
 ```cshtml
 	
-	// View Code
+	@* View Code *@
 
 	@model Sidewired.Core.Interfaces.IPlayerSettings 	
 	
@@ -157,7 +158,8 @@ The explicit mode forces you to create the **player configuration object** and p
 The implicit mode allows you to define a unique configuration for your player anywhere in your code without worrying about any other code using or messing with it since it is *thread locally storaged* and only lasts for the contextual thread's life time. 
 This mode comes quite handy when you want to get rid of passing the **player configuration object** to the view or, even worse, having to create it right there.
 
-```c#
+```
+
 	// Controller(or anywhere) Code Fragment
 	
 	...
@@ -205,7 +207,7 @@ This mode comes quite handy when you want to get rid of passing the **player con
 
 ```cshtml
 	
-	// View Code
+	@* View Code *@
 	
 	...
 	
@@ -218,7 +220,7 @@ This mode comes quite handy when you want to get rid of passing the **player con
 Additional Features
 -------------------
 
-Additionally, **Sidewired** allows you to set up a custom XAML based theme for the *sidewired* "Silverlight Player". 
+Additionally, **Sidewired** allows you to set up a custom **XAML** based theme for the *sidewired* **Silverlight Player**. 
 To achieve this, you have to specify the XAML file URI in the HTML Helper, just like this:
 
 ```cshtml
@@ -232,5 +234,5 @@ To achieve this, you have to specify the XAML file URI in the HTML Helper, just 
 ```
 
 ### Note
-* This feature relies on the match of both resource key name (the one specified in the XAML theme file and the one specified in the player XAML UI design specification) during the process of binding the player style with the SMFPlayer object. It is a smoke potentially pointing to your feet which I strongly recommend using only when you control both sides (player code and XAML theme markup).
+* This feature relies on the match of both resource key name (the one specified in the **XAML** theme file and the one specified in the player **XAML** UI Design Specification) during the process of binding the player style with the **SMFPlayer** object. It is a smoke gun potentially pointing to your feet which I strongly recommend using only when you control both sides (player code and **XAML** theme markup).
 

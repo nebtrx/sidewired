@@ -24,6 +24,10 @@ namespace Sidewired.Web
         /// <param name="objectHeightPercentage">Silverlight object width percentage.</param>
         /// <param name="minimumRuntimeVersion">Silverlight object minimum runtime version </param>
         /// <param name="iFrameStyle">Silverlight object iFrame style</param>
+        /// <param name="windowLess"> Enables windowless behavior.</param>
+        /// <param name="enableHtmlAccess"> Enables  html access.</param>
+        /// <param name="enableGpuAcceleration">Allows GPU acceleration </param>
+        /// <param name="autoUpgrade"> Allows autoupgrade behavior.</param>
         /// <returns>HTML code for a silverlight media player with the requested settings.</returns>
         /// <exception cref="ArgumentNullException">Throws an ArgumentNullException exception if parameter is not <paramref name="playerXapSource"/> weren't provided.</exception>
         public static HtmlString SilverlightMediaPlayer(this HtmlHelper htmlHelper,
@@ -36,6 +40,10 @@ namespace Sidewired.Web
             string sidewiredXapSource = @"/ClientBin/Sidewired.xap",
             string objectWidthPercentage = "100",
             string objectHeightPercentage = "100",
+            bool enableHtmlAccess = true,
+            bool enableGpuAcceleration = true,
+            bool autoUpgrade = true,
+            bool windowLess = true,
             string minimumRuntimeVersion = "4.0.50826.0",
             string iFrameStyle = "visibility:hidden;height:0px;width:0px;border:0px")
         {
@@ -49,7 +57,10 @@ namespace Sidewired.Web
                 throw new ArgumentNullException("sidewiredXapSource");
             }
 
-            return CreatePlayerMarkup(Sidewired.Core.Sidewired.PlayerSettings, playerXapSource, sidewiredXapSource, containerHtmlAttributes, xamlThemeSource, scriptableName, onErrorCallBack, onLoadedCallback, objectWidthPercentage, objectHeightPercentage, minimumRuntimeVersion, iFrameStyle);
+            return CreatePlayerMarkup(Core.Sidewired.PlayerSettings, playerXapSource, sidewiredXapSource, 
+                containerHtmlAttributes, xamlThemeSource, scriptableName, onErrorCallBack, onLoadedCallback, 
+                objectWidthPercentage, objectHeightPercentage, autoUpgrade, enableGpuAcceleration, windowLess, 
+                enableHtmlAccess, minimumRuntimeVersion, iFrameStyle);
         }
 
 
@@ -67,6 +78,10 @@ namespace Sidewired.Web
         /// <param name="sidewiredXapSource">Sidewired's plugin xap file location. </param>
         /// <param name="objectWidthPercentage">Silverlight object width percentage.</param>
         /// <param name="objectHeightPercentage">Silverlight object width percentage.</param>
+        /// <param name="windowLess"> Enables windowless behavior.</param>
+        /// <param name="enableHtmlAccess"> Enables  html access.</param>
+        /// <param name="enableGpuAcceleration">Allows GPU acceleration </param>
+        /// <param name="autoUpgrade"> Allows autoupgrade behavior.</param>
         /// <param name="minimumRuntimeVersion">Silverlight object minimum runtime version </param>
         /// <param name="iFrameStyle">Silverlight object iFrame style</param>
         /// <returns>HTML code for a silverlight media player with the requested settings.</returns>
@@ -82,6 +97,10 @@ namespace Sidewired.Web
             string sidewiredXapSource = @"/ClientBin/Sidewired.xap",
             string objectWidthPercentage = "100",
             string objectHeightPercentage = "100",
+            bool enableHtmlAccess = true,
+            bool enableGpuAcceleration = true,
+            bool autoUpgrade = true,
+            bool windowLess = true,
             string minimumRuntimeVersion = "4.0.50826.0",
             string iFrameStyle = "visibility:hidden;height:0px;width:0px;border:0px")
         {
@@ -100,13 +119,16 @@ namespace Sidewired.Web
                 throw new ArgumentNullException("sidewiredXapSource");
             }
 
-            return CreatePlayerMarkup(playerSettings﻿, playerXapSource, sidewiredXapSource, containerHtmlAttributes, xamlThemeSource, scriptableName, onErrorCallBack, onLoadedCallback, objectWidthPercentage, objectHeightPercentage, minimumRuntimeVersion, iFrameStyle);
+            return CreatePlayerMarkup(playerSettings﻿, playerXapSource, sidewiredXapSource, containerHtmlAttributes, 
+                xamlThemeSource, scriptableName, onErrorCallBack, onLoadedCallback, objectWidthPercentage, objectHeightPercentage, 
+                autoUpgrade, enableGpuAcceleration, windowLess, enableHtmlAccess,minimumRuntimeVersion, iFrameStyle);
         }
 
         private static HtmlString CreatePlayerMarkup(IPlayerSettings playerSettings﻿, string playerXapSource,
                                                      string sidewiredXapSource, object containerHtmlAttributes, string xamlThemeSource,
                                                      string scriptableName,  string onErrorCallback, string onLoadedCallback,
                                                      string objectWidthPercentage, string objectHeightPercentage,
+                                                     bool autoUpgrade, bool enableGpuAcceleration, bool windowless, bool enableHtmlAccess,
                                                      string minimumRuntimeVersion, string iFrameStyle)
         {
             var imgBuilder = new TagBuilder("img");
@@ -144,7 +166,10 @@ namespace Sidewired.Web
                 CraftParamTagBuilder("onError", onErrorCallback).ToString(TagRenderMode.SelfClosing) +
                 CraftParamTagBuilder("onLoad", onLoadedCallback).ToString(TagRenderMode.SelfClosing) +
                 CraftParamTagBuilder("background", "white").ToString(TagRenderMode.SelfClosing) +
-                CraftParamTagBuilder("autoUpgrade", "true").ToString(TagRenderMode.SelfClosing) +
+                CraftParamTagBuilder("autoUpgrade", autoUpgrade.ToString()).ToString(TagRenderMode.SelfClosing) +
+                CraftParamTagBuilder("EnableGPUAcceleration", enableGpuAcceleration.ToString()).ToString(TagRenderMode.SelfClosing) +
+                CraftParamTagBuilder("Windowless", windowless.ToString()).ToString(TagRenderMode.SelfClosing) +
+                CraftParamTagBuilder("EnableHtmlAccess", enableHtmlAccess.ToString()).ToString(TagRenderMode.SelfClosing) +
                 (String.IsNullOrWhiteSpace(xamlThemeSource) ?
                 CraftParamTagBuilder("InitParams", string.Format("pluginUrl = {0}, scriptableName = {1}, InitialSettings ={2}\n ", sidewiredXapSource, scriptableName , playerSettings﻿.AsXmlSerializedString())) :
                 CraftParamTagBuilder("InitParams", string.Format("pluginUrl = {0}, scriptableName = {1}, xamlThemeSource = {2}, InitialSettings ={3}\n ", sidewiredXapSource, scriptableName, xamlThemeSource, playerSettings﻿.AsXmlSerializedString()))
