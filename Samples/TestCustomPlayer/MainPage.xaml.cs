@@ -7,5 +7,6 @@ namespace TestCustomPlayer
         public MainPage()
         {
             InitializeComponent();
-        }}
+        }
+    }
 }

@@ -4228,7 +4228,7 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style x:Key="LiVoStPlayerStyle" TargetType="smf:SMFPlayer">
+	<Style x:Key="PlayerStyle" TargetType="smf:SMFPlayer">
 		<Setter Property="Background" Value="Black"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		<Setter Property="VerticalAlignment" Value="Stretch"/>

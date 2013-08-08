@@ -8,14 +8,9 @@
     >
 
     <Grid x:Name="LayoutRoot" Background="White">
-        <smf:SMFPlayer x:Name="Player" Style="{StaticResource LiVoStPlayerStyle}" CaptionsVisibility="Visible">
+        <smf:SMFPlayer x:Name="Player" Style="{StaticResource PlayerStyle}" CaptionsVisibility="Visible">
             
         </smf:SMFPlayer>
-        <!--<Animated:TextTickerControl x:Name="_news" Margin="0,10,0,0" Height="24" VerticalAlignment="Top" AutoPlay="True" Background="#FFCED5D8" Foreground="#FF193857" FontWeight="Bold" FontSize="14" FontFamily="Consolas" Speed="5" Text="test" TickerOrientation="RightToLeft"/>
-        <Button x:Name="Pause" Content="Pause" HorizontalAlignment="Left" Margin="95,131,0,0" VerticalAlignment="Top" Width="75" Click="Pause_Click"/>
-        <Button x:Name="Stop" Content="Stop" HorizontalAlignment="Left" Margin="95,189,0,0" VerticalAlignment="Top" Width="75" Click="Stop_Click"/>
-        <Button x:Name="Play" Content="Play" HorizontalAlignment="Left" Margin="254,131,0,0" VerticalAlignment="Top" Width="75" Click="Play_Click"/>
-        <NewsScroll:SilverlightControl1 Name="omar" Margin="0,75,0,0"  Height="18" VerticalAlignment="Top" Background="#FFCED5D8" Foreground="#FF193857" FontWeight="Bold" FontSize="14" FontFamily="Consolas" Speed="5" Text="test" TickerOrientation="RightToLeft" SizeChanged="omar_SizeChanged"/>
-        <Button x:Name="Play_Copy" Content="size" HorizontalAlignment="Left" Margin="254,180,0,0" VerticalAlignment="Top" Width="75" Click="SizeClik"/>-->
+        
     </Grid>
 </UserControl>

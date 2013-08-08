@@ -9,7 +9,7 @@
     <title>Sidewired</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Sidewired aims to deliver the whole media content experience of Silverlight Media Platform Player Framework (SMPPF) inside player hosted in an ASP.NET MVC Application through a fluent configuration API.
+      A MEF plugin with a fluent configuration API which allow you to drop the whole media content experience of Silverlight Media Platform Player Framework (SMPPF) into an ASP.NET MVC Application without having to create your own custom player.
     </description>    
     <language>en-US</language>
     <tags>Sidewired ASP.NET MVC Silverlight Media Platform Player</tags>

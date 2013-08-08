@@ -48,10 +48,5 @@ namespace Sidewired.Core.Interfaces
         /// Used to pass the PlaylistVisibility property to the Silverlight Media Player using Sidewired.
         /// </summary>
         FeatureVisibility PlaylistVisibility { get; set; }
-
-        /// <summary>
-        /// Used to pass the Xaml's Theme URI to the Silverlight Media Player using Sidewired.
-        /// </summary>
-        Uri XamlThemeSource { get; set; }
     }
 }
