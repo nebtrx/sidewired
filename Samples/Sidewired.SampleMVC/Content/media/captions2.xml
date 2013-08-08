@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en-GB" xmlns="http://www.w3.org/2006/10/ttaf1">
+  <head>
+    <metadata>
+      <ttm:title xmlns:ttm="http://www.w3.org/2006/10/ttaf1#metadata" />
+      <ttm:desc xmlns:ttm="http://www.w3.org/2006/10/ttaf1#metadata" />
+      <ttm:copyright xmlns:ttm="http://www.w3.org/2006/10/ttaf1#metadata" />
+    </metadata>
+    <styling>
+      <style xml:id="backgroundStyle" p5:fontFamily="proportionalSansSerif" p5:fontSize="16px" p5:textAlign="center" p5:origin="10% 85%" p5:extent="80% 10%" p5:backgroundColor="rgba(0,0,0,100)" p5:displayAlign="center" xmlns:p5="http://www.w3.org/2006/10/ttaf1#styling" />
+      <p5:style xml:id="speakerStyle" p5:style="backgroundStyle" p6:color="white" p6:backgroundColor="transparent" xmlns:p6="http://www.w3.org/2006/10/ttaf1#styling" xmlns:p5="http://www.w3.org/2006/10/ttaf1" />
+    </styling>
+    <layout>
+      <p5:region xml:id="speaker" p5:style="speakerStyle" p6:zIndex="1" xmlns:p6="http://www.w3.org/2006/10/ttaf1#styling" xmlns:p5="http://www.w3.org/2006/10/ttaf1" />
+      <p5:region xml:id="background" p5:style="backgroundStyle" p6:zIndex="0" xmlns:p6="http://www.w3.org/2006/10/ttaf1#styling" xmlns:p5="http://www.w3.org/2006/10/ttaf1" />
+    </layout>
+  </head>
+  <body>
+    <div>
+      <p4:p p4:region="speaker" p4:begin="00:00:02:00" p4:end="00:00:17:28" xmlns:p4="http://www.w3.org/2006/10/ttaf1">captionnnnnnnnnn 2!!!!!(also  long) </p4:p>
+      <p4:p p4:region="speaker" p4:begin="00:00:18:04" p4:end="00:00:20:02" xmlns:p4="http://www.w3.org/2006/10/ttaf1">Caption feature works fine here too </p4:p>
+    </div>
+  </body>
+</tt>
