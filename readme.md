@@ -5,13 +5,13 @@ What is it?
 -----------
 
 A **MEF Plugin** with a **fluent configuration API** which allow you to drop the whole media content experience of **Silverlight Media Platform Player Framework (SMPPF)** into an **ASP.NET MVC Application** without having to create your own **Customized Silverlight Player**.
-In other words you may use any third party **Silverlight Player** like Silverlight Smooth Streaming Player or Silverlight Preogressive Download Player, both shipped by Microsoft, or even a lightweight custom player  and use **Sidewired** to *sidewire* the playlist, chapters, timeline markers, ads, captions and other stuff to enhance the end user experience.
+In other words you may use any third party **Silverlight Player** like Silverlight Smooth Streaming Player or Silverlight Progressive Download Player, both shipped by Microsoft, or even a lightweight custom player  and use **Sidewired** to *sidewire* the playlist, chapters, timeline markers, ads, captions and other stuff to enhance the end user experience.
 
 How it works?
 -------------
 
 **Sidewired** deploys a **MEF Plugin** packed in a XAP file and a couple of Html Helpers, as well as the core library right into your **ASP.NET MVC Application**. 
-Using **Sidewired fluent configuration API** you are able to create a **player configuration object**, wich will be use as DTO to pass the configuration to a **Silverlight Player**.
+Using **Sidewired fluent configuration API** you are able to create a **player configuration object**, which will be used as DTO to pass the configuration to a **Silverlight Player**.
 The starting spark lies inside the Html Helpers which, besides of allowing you to control **Sidewired**'s behavior, use the Silverlight object's markup to inject the **MEF Plugin** packed in the XAP file and the **player configuration object** serialized in XML format.
 
 ```html
@@ -155,7 +155,7 @@ The explicit mode forces you to create the **player configuration object** and p
 	...
 ```
 
-The implicit mode allows you to define a unique configuration for your player anywhere in your code without worrying about any other code using or messing with it since it is *thread locally storaged* and only lasts for the contextual thread's life time. 
+The implicit mode allows you to define a unique configuration for your player anywhere in your code without worrying about any other code using or messing with it, since it is **thread locally stored** and only lasts for the contextual thread's life time. 
 This mode comes quite handy when you want to get rid of passing the **player configuration object** to the view or, even worse, having to create it right there.
 
 ```

@@ -1,7 +1,7 @@
-Please see https://bitbucket.org/nebtrx/framerizr/overview for more information about Framerizr.
+Please see https://bitbucket.org/nebtrx/sidewired/overview for more information about Sidewired.
  
-Getting started with Framerizr.MVC
-----------------------------------
+Getting started with Sidewired
+------------------------------
 
 Once installed Sidewired can be used in two modes: Explicit & Implicit. 
 
@@ -67,7 +67,7 @@ The explicit mode forces you to create the player configuration object and passe
 	...
 
 
-The implicit mode allows you to define a unique configuration for your player anywhere in your code without worrying about any other code using or messing with it since it is thread locally storaged and only lasts for the contextual thread's life time. 
+The implicit mode allows you to define a unique configuration for your player anywhere in your code without worrying about any other code using or messing with it, since it is thread locally stored and only lasts for the contextual thread's life time. 
 This mode comes quite handy when you want to get rid of passing the player configuration object to the view or, even worse, having to create it right there.
 
 
