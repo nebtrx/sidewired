@@ -11,7 +11,7 @@ How it works?
 -------------
 
 **Sidewired** deploys a **MEF Plugin** packed in a XAP file and a couple of Html Helpers, as well as the core library right into your **ASP.NET MVC Application**. 
-Using **Sidewired fluent configuration API** you are able to create a **player configuration object**, wich will be use as DTO to pass the configuration to a "Silverlight Player".
+Using **Sidewired fluent configuration API** you are able to create a **player configuration object**, wich will be use as DTO to pass the configuration to a **Silverlight Player**.
 The starting spark lies inside the Html Helpers which, besides of allowing you to control **Sidewired**'s behavior, use the Silverlight object's markup to inject the **MEF Plugin** packed in the XAP file and the **player configuration object** serialized in XML format.
 
 ```html
